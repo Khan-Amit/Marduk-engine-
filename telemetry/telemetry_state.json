@@ -34,7 +34,6 @@ int parse_system_environment(TelemetryEnv *env) {
     FILE *fp = fopen(CONF_FILE, "r");
     if (!fp) return 0;
 
-    // FIXED: Allocated a complete 256-byte string buffer array matrix
     char line[256];
     env->routing_channel = 1;
     strcpy(env->target_ingress, "UNKNOWN");
@@ -65,7 +64,6 @@ void process_telemetry_payload() {
     FILE *json = fopen(JSON_FILE, "r");
     if (!json) return;
 
-    // FIXED: Allocated a complete 256-byte string buffer array matrix
     char line[256];
     int v = 0, f = 0;
     double g = 0.0;
