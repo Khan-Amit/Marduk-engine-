@@ -8,3 +8,5 @@ xmrig/
 *.sh
 .bash_history
 .cache/
+telemetry
+xmrig
