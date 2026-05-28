@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARDUKH V1</title>
+    <title>MARDUKH V1 - System Master Dashboard</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -45,6 +45,9 @@
         .bg-lockscreen { background-image: url('lockscreen_layout.png'); background-color: rgba(35, 134, 54, 0.05); }
         .bg-control { background-image: url('control_layout.png'); background-color: rgba(218, 54, 51, 0.05); }
         .bg-telemetry { background-image: url('telemetry_layout.png'); background-color: rgba(255, 255, 255, 0.02); }
+        
+        /* High-visibility typography for wallet layout container structures */
+        .wallet-container { background: #0d1117; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.8rem; border: 1px solid var(--border); color: var(--accent-blue); word-break: break-all; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -62,6 +65,7 @@
         </div>
     </header>
 
+    <!-- PAGE 1: ACCESS GATE INTERACTIVE SCREEN -->
     <div id="page-1" class="page">
         <div class="card" style="max-width: 400px; margin: 40px auto 0 auto; text-align: center;">
             <h2>System Access Authorization</h2>
@@ -71,6 +75,7 @@
         </div>
     </div>
 
+    <!-- PAGE 2: INITIAL STATUS REPORT -->
     <div id="page-2" class="page">
         <div class="card">
             <h2>Baseline Operational Metrics (General Public View)</h2>
@@ -92,6 +97,7 @@
         </div>
     </div>
 
+    <!-- PAGE 3: TELEMETRY ENGINE SPEED METER DIALS -->
     <div id="page-3" class="page">
         <div class="card" style="padding: 0; margin-bottom: 15px;">
             <div class="image-container-shell bg-telemetry" style="margin: 0;"></div>
@@ -109,11 +115,12 @@
             </div>
         </div>
         <div class="card">
-            <h2>Rolling Blocked IP Socket Logs</h2>
-            <div id="log-stream" class="log-box">Initializing pure local thread stream logs...</div>
+            <h2>Rolling Blocked IP Socket Logs (1500ms Repository Sync Loop)</h2>
+            <div id="log-stream" class="log-box">Initializing repository telemetry stream log layers...</div>
         </div>
     </div>
 
+    <!-- PAGE 4: MASTER ADMINISTRATIVE CONTROLS DASHBOARD -->
     <div id="page-4" class="page active-page">
         <div class="card" style="padding: 0; margin-bottom: 15px;">
             <div class="image-container-shell bg-control" style="margin: 0;"></div>
@@ -139,22 +146,12 @@
                     <h2>b. Cumulative Financial Gain Matrix</h2>
                     <h3 id="admin-financial-val" style="font-size: 2rem; color: var(--accent-green); margin-top: 5px;">Evaluating...</h3>
                 </div>
-                <div style="margin-top: 15px;">
-                    <button class="btn-action btn-blue" onclick="downloadAdministrativeReport()">e. Download Master Administrative Report (.CSV)</button>
+                <div>
+                    <!-- CONNECTED DEPLOYMENT MONERO CRYPTO WALLET CONTAINER ASSET -->
+                    <small style="color: var(--text-muted); font-weight: bold; display: block; margin-top: 10px;">Target Crypto Wallet Destination String Mapping:</small>
+                    <div class="wallet-container">44osUR6e9UjepWUQhavLNYTY7JSzwZMN6.MardukhEngine</div>
                 </div>
             </div>
         </div>
         <div class="grid-2">
             <div class="card">
-                <h2>c. Active Authorized User Numbers Matrix</h2>
-                <div style="max-height: 200px; overflow-y: auto;">
-                    <table>
-                        <thead><tr><th>User ID</th><th>Authorization Level</th><th>Node Status</th></tr></thead>
-                        <tbody>
-                            <tr><td>MDK-USR-0912</td><td>Operator Tier 1</td><td style="color: var(--accent-green)">Active</td></tr>
-                            <tr><td>MDK-USR-4410</td><td>Engineering Master</td><td style="color: var(--accent-green)">Active</td></tr>
-                            <tr><td>MDK-USR-8891</td><td>Sovereign Root Core</td><td style="color: var(--accent-green)">Active</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
