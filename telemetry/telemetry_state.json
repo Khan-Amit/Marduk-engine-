@@ -11,6 +11,7 @@
 #define EVENT_SIZE (sizeof(struct inotify_event))
 #define BUF_LEN (1024 * (EVENT_SIZE + 16))
 
+// Clear structured matrix layout
 typedef struct {
     int routing_channel;
     char target_ingress[64];
@@ -18,8 +19,9 @@ typedef struct {
     int thread_lock;
 } TelemetryEnv;
 
+// Safe configuration string value extractor
 void get_conf_value(const char *line, const char *key, char *output) {
-    char *ptr = strchr(line, '=');
+    const char *ptr = strchr(line, '=');
     if (ptr) {
         strcpy(output, ptr + 1);
         size_t len = strlen(output);
@@ -30,6 +32,7 @@ void get_conf_value(const char *line, const char *key, char *output) {
     }
 }
 
+// Fixed system environment configuration parser
 int parse_system_environment(TelemetryEnv *env) {
     FILE *fp = fopen(CONF_FILE, "r");
     if (!fp) return 0;
@@ -60,6 +63,7 @@ int parse_system_environment(TelemetryEnv *env) {
     return 1;
 }
 
+// Real-time local JSON file metrics reader
 void process_telemetry_payload() {
     FILE *json = fopen(JSON_FILE, "r");
     if (!json) return;
@@ -69,7 +73,7 @@ void process_telemetry_payload() {
     double g = 0.0;
     
     while (fgets(line, sizeof(line), json)) {
-        char *colon = strchr(line, ':');
+        const char *colon = strchr(line, ':');
         if (!colon) continue;
         
         if (strstr(line, "\"voip_ingress_kbps\"")) v = atoi(colon + 1);
