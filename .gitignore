@@ -1,10 +1,2 @@
-.engine/
-config.json
-.xmrig.json
-.config/
-xmrig/
-*.deb
-*.tar.gz
-*.sh
-.bash_history
-.cache/
+cd ~/Marduk-engine
+echo "" > .gitignore
