@@ -1,2 +1,22 @@
-cd ~/Marduk-engine
-echo "" > .gitignore
+cat << 'EOF' > .gitignore
+xmrig
+*.exe
+*.out
+*.app
+*.bin
+*.o
+*.obj
+build/
+bin/
+obj/
+.ssh/
+*id_ed25519*
+*token*
+*.pem
+*.key
+vault_gate.sh
+.cache/
+.DS_Store
+*.log
+*.tmp
+EOF
