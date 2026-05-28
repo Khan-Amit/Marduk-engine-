@@ -1,12 +1,13 @@
-.engine/
-config.json
-.xmrig.json
-.config/
-xmrig/
-*.deb
-*.tar.gz
-*.sh
-.bash_history
-.cache/
+# Compiled binaries
 telemetry
 xmrig
+collector
+*.o
+
+# OS garbage
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
